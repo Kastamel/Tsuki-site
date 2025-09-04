@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tsuki Valen | Dream Neuroscience</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Nunito', sans-serif;
+      color: #f0f0f0;
+      background: radial-gradient(circle at top left, #0a0f1c, #000);
+      background-attachment: fixed;
+      overflow-x: hidden;
+    }
+    h1, h2, h3 {
+      font-family: 'Orbitron', sans-serif;
+      text-transform: uppercase;
+      color: #4AAFD9;
+      margin-bottom: 0.5em;
+    }
+    .section {
+      padding: 5em 2em;
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+      position: relative;
+    }
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(160deg, rgba(74,175,217,0.1), rgba(255,255,255,0) 70%),
+                  radial-gradient(circle at bottom right, rgba(200, 150, 255,0.1), transparent 60%);
+      z-index: 1;
+    }
+    .hero h1, .hero p, .hero a, #logoCanvas {
+      position: relative;
+      z-index: 2;
+    }
+    .hero h1 {
+      font-size: 3em;
+      margin-top: 1em;
+    }
+    canvas#particles, canvas#logoCanvas, canvas#mochiCanvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    canvas#particles {
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+    #logoCanvas {
+      width: 200px;
+      height: 200px;
+      z-index: 2;
+    }
+    #mochiCanvas {
+      width: 120px;
+      height: 120px;
+      bottom: -10px;
+      right: 20px;
+      position: absolute;
+      z-index: 2;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2em;
+      margin-top: 2em;
+    }
+    .card {
+      background: rgba(255,255,255,0.05);
+      border-radius: 1em;
+      padding: 2em;
+      box-shadow: 0 0 15px rgba(0,0,0,0.4);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 25px rgba(74,175,217,0.5);
+    }
+    .footer {
+      padding: 2em;
+      text-align: center;
+      font-size: 0.9em;
+      color: #aaa;
+    }
+    a.button {
+      display: inline-block;
+      background: #4AAFD9;
+      color: #000;
+      padding: 0.75em 1.5em;
+      margin-top: 1.5em;
+      border-radius: 2em;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.2s ease;
+    }
+    a.button:hover {
+      background: #76c9f0;
+    }
+    .quote {
+      font-size: 1.2em;
+      font-style: italic;
+      margin-top: 1em;
+      color: #c0d8ff;
+    }
+    .bg-wave {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(135deg, rgba(74,175,217,0.05), rgba(74,175,217,0.05) 2px, transparent 2px, transparent 20px);
+      animation: moveBackground 15s linear infinite;
+      z-index: 0;
+    }
+    @keyframes moveBackground {
+      from { background-position: 0 0; }
+      to { background-position: 1000px 1000px; }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="bg-wave"></div>
+    <canvas id="particles"></canvas>
+    <canvas id="logoCanvas"></canvas>
+    <h1>Tsuki Valen</h1>
+    <p><em>Dream Neuroscience | Bridging Dreams, Memory, and the Mind</em></p>
+    <div class="quote">“The brain is a cosmos, and dreams are its constellations.”</div>
+    <a href="#about" class="button">Enter</a>
+  </section>
+
+  <section id="about" class="section">
+    <h2>About</h2>
+    <p>Neuroscientist specializing in dreams, fear, and emotional processing. Exploring how the mind makes monsters—and how it makes safety.</p>
+  </section>
+
+  <section class="section">
+    <h2>Research</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>Neuroscience of Fear</h3>
+        <p>How the brain shapes terror, and how familiarity rewires it into resilience.</p>
+      </div>
+      <div class="card">
+        <h3>Dreamwork with Children</h3>
+        <p>Creating safe dream environments to heal and comfort young minds.</p>
+      </div>
+      <div class="card">
+        <h3>Neurodivergence & Comfort</h3>
+        <p>Studying emotional processing in ADHD, OCD, and Autism through dreamscapes.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Mochi Corner</h2>
+    <p><em>“Dream safety is a team effort.”</em></p>
+    <p>A whimsical assistant who brings light to the darkest corners of the subconscious.</p>
+    <canvas id="mochiCanvas"></canvas>
+  </section>
+
+  <section class="section">
+    <h2>Philosophy</h2>
+    <p>Dreams are more than random noise—they are the subconscious speaking in symbols, weaving narratives of safety and survival. Tsuki’s work focuses on helping people understand those narratives and transform them into anchors of resilience.</p>
+  </section>
+
+  <footer class="footer">
+    Made of moonlight & synapses. | © Tsuki Valen
+  </footer>
+
+  <script>
+    // Particle background
+    const canvas = document.getElementById('particles');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+
+    function resize() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    function createParticles() {
+      particles = [];
+      for (let i = 0; i < 80; i++) {
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          vx: (Math.random() - 0.5) * 0.5,
+          vy: (Math.random() - 0.5) * 0.5,
+          size: Math.random() * 2 + 1
+        });
+      }
+    }
+    createParticles();
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = 'rgba(255,255,255,0.7)';
+      particles.forEach(p => {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fill();
+
+        p.x += p.vx;
+        p.y += p.vy;
+
+        if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+      });
+      requestAnimationFrame(draw);
+    }
+    draw();
+
+    // Logo animation: moon + neuron branches
+    const logoCanvas = document.getElementById('logoCanvas');
+    const lctx = logoCanvas.getContext('2d');
+    logoCanvas.width = 200;
+    logoCanvas.height = 200;
+
+    function drawLogo(time) {
+      lctx.clearRect(0, 0, logoCanvas.width, logoCanvas.height);
+      const centerX = logoCanvas.width / 2;
+      const centerY = logoCanvas.height / 2;
+
+      // Moon circle
+      lctx.beginPath();
+      lctx.arc(centerX, centerY, 60, 0, Math.PI * 2);
+      lctx.strokeStyle = '#4AAFD9';
+      lctx.lineWidth = 2;
+      lctx.stroke();
+
+      // Neuron-like branching
+      const branches = 8;
+      for (let i = 0; i < branches; i++) {
+        const angle = (Math.PI * 2 / branches) * i + time * 0.001;
+        const x = centerX + Math.cos(angle) * 60;
+        const y = centerY + Math.sin(angle) * 60;
+        lctx.beginPath();
+        lctx.moveTo(centerX, centerY);
+        lctx.lineTo(x, y);
+        lctx.strokeStyle = 'rgba(200,200,255,0.6)';
+        lctx.lineWidth = 1;
+        lctx.stroke();
+      }
+
+      requestAnimationFrame(drawLogo);
+    }
+    requestAnimationFrame(drawLogo);
+
+    // Mochi doodle animation
+    const mochiCanvas = document.getElementById('mochiCanvas');
+    const mctx = mochiCanvas.getContext('2d');
+    mochiCanvas.width = 120;
+    mochiCanvas.height = 120;
+
+    let bounce = 0;
+    function drawMochi(time) {
+      mctx.clearRect(0, 0, mochiCanvas.width, mochiCanvas.height);
+      const centerX = mochiCanvas.width / 2;
+      const baseY = mochiCanvas.height / 2 + 20;
+      bounce = Math.sin(time * 0.005) * 10;
+
+      // Mochi body
+      mctx.beginPath();
+      mctx.arc(centerX, baseY - bounce, 30, 0, Math.PI * 2);
+      mctx.fillStyle = '#fff';
+      mctx.fill();
+      mctx.strokeStyle = '#4AAFD9';
+      mctx.stroke();
+
+      // Eyes
+      mctx.beginPath();
+      mctx.arc(centerX - 10, baseY - bounce - 5, 5, 0, Math.PI * 2);
+      mctx.arc(centerX + 10, baseY - bounce - 5, 5, 0, Math.PI * 2);
+      mctx.fillStyle = '#000';
+      mctx.fill();
+
+      // Glow
+      mctx.beginPath();
+      mctx.arc(centerX, baseY - bounce, 40, 0, Math.PI * 2);
+      mctx.strokeStyle = 'rgba(74,175,217,0.4)';
+      mctx.lineWidth = 2;
+      mctx.stroke();
+
+      requestAnimationFrame(drawMochi);
+    }
+    requestAnimationFrame(drawMochi);
+  </script>
+
+</body>
+</html>
